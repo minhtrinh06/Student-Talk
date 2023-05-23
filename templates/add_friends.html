@@ -1,0 +1,119 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Friends List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    form {
+      margin-bottom: 10px;
+    }
+
+    #friend-list {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .friend-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 5px;
+    }
+
+    .friend-item span {
+      flex-grow: 1;
+    }
+
+    .friend-item button {
+      margin-left: 10px;
+    }
+  </style>
+</head> -->
+<body>
+  <h1>Friends List</h1>
+
+  <form id="add-friend-form">
+    <label for="add-friend-input">Add Friend:</label>
+    <input type="text" id="add-friend-input">
+    <button type="submit">Add</button>
+  </form>
+
+  <form id="remove-friend-form">
+    <label for="remove-friend-input">Remove Friend:</label>
+    <select id="remove-friend-input">
+      <option value="" selected disabled>Select a friend to remove</option>
+    </select>
+    <button type="submit">Remove</button>
+  </form>
+
+  <script>
+    // Store friends in an array
+    let friends = [];
+
+    // Get form elements
+    const addFriendForm = document.getElementById('add-friend-form');
+    const addFriendInput = document.getElementById('add-friend-input');
+    const removeFriendForm = document.getElementById('remove-friend-form');
+    const removeFriendInput = document.getElementById('remove-friend-input');
+    const friendList = document.getElementById('friend-list');
+
+    // Add friend
+    addFriendForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const friendName = addFriendInput.value.trim();
+      if (friendName !== '') {
+        friends.push(friendName);
+        renderFriendList();
+        addFriendInput.value = '';
+      }
+    });
+
+    // Remove friend
+    removeFriendForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const friendIndex = removeFriendInput.selectedIndex;
+      if (friendIndex !== -1) {
+        friends.splice(friendIndex, 1);
+        renderFriendList();
+        removeFriendInput.selectedIndex = 0;
+      }
+    });
+
+    // Render friend list
+    function renderFriendList() {
+      friendList.innerHTML = '';
+      friends.forEach(function(friend) {
+        const listItem = document.createElement('li');
+        listItem.classList.add('friend-item');
+        listItem.innerHTML = `
+          <span>${friend}</span>
+          <button class="remove-button">Remove</button>
+        `;
+        friendList.appendChild(listItem);
+      });
+
+      const removeButtons = document.querySelectorAll('.remove-button');
+      removeButtons.forEach(function(button, index) {
+        button.addEventListener('click', function() {
+          friends.splice(index, 1);
+          renderFriendList();
+        });
+      });
+
+      // Update remove friend select options
+      removeFriendInput.innerHTML = '<option value="" selected disabled>Select a friend to remove</option>';
+      friends.forEach(function(friend) {
+        const option = document.createElement('option');
+        option.value = friend;
+        option.textContent = friend;
+        removeFriendInput.appendChild(option);
+      });
+    }
+  </script>
+</body>

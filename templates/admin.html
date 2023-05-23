@@ -1,0 +1,44 @@
+<body>
+    <h1>Admin Services</h1>
+    <div class="admin-forms">
+        <section>
+            <h2>Add Course Guide</h2>
+            <form class="admin-form" action="/add_guide" method="POST">
+                <label for="course_code">Course Code:</label><br>
+                <input type="text" id="course_code" name="course_code"><br>
+                <label for="course_name">Course Name:</label><br>
+                <input type="text" id="course_name" name="course_name"><br>
+                <label for="description">Description:</label><br>
+                <input type="text" id="description" name="description"><br>
+                <input class="admin-submit" type="submit" value="Add Guide">
+            </form>
+        </section>
+        
+        <section>
+            <h2>Remove Course Guide</h2>
+            <form class="admin-form" action="/remove_guide" method="POST">
+                <label for="course_code">Course Code:</label><br>
+                <input type="text" id="remove_course_code" name="course_code"><br>
+                <input class="admin-submit" type="submit" value="Remove Guide">
+            </form>
+        </section>
+
+        <section>
+            <h2>Delete User</h2>
+            <form class="admin-form" action="/remove_user" method="POST">
+                <label for="username">Username:</label><br>
+                <input type="text" id="username" name="username"><br>
+                <input  class="admin-submit" type="submit" value="Delete User">
+            </form>
+        </section>
+        
+        <section>
+            <h2>Mute User</h2>
+            <form class="admin-form" action="/mute_user" method="POST">
+                <label for="username">Username:</label><br>
+                <input type="text" id="mute_username" name="username"><br>
+                <input  class="admin-submit" type="submit" value="Mute User">
+            </form>
+        </section>
+    </div>
+</body>

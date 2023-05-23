@@ -1,0 +1,159 @@
+    <!-- <script src="scripts.js"></script> Link to your JS file -->
+    <!-- <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #4caf4fe8;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1, h2 {
+            margin: 0;
+            padding: 0;
+        }
+
+        main {
+            margin: 20px;
+        }
+
+        section {
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #ffffff;
+        }
+
+        /* #course-guides {
+            /* Specific styles for course guides section 
+        }
+
+        #users-section {
+            /* Specific styles for users section 
+        } */
+
+        #users-section {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 50%;
+        }
+
+        .friend-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .friend-list li {
+            padding: 1rem;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        .chat-button {
+            display: block;
+            padding: 10px;
+            margin-bottom: 10px;
+            text-align: left;
+            color: #ffffff;
+            background-color: #4caf4fe8;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .chat-button:hover {
+            background-color: #3783ac;
+        }
+
+        .add-friend-button {
+            display: block;
+            background-color: #4caf4fe8;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 1rem;
+        }
+
+        footer {
+            background-color: #4caf4fe8;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+    </style> -->
+<body>
+    <header>
+        <h1>Welcome to Student Talk, ${sender}!</h1>
+    </header>
+
+    <main>
+        <!-- Section for latest course guides -->
+        <section id="course-guides">
+            <h2>Latest Course Guides</h2>
+            <div id="guides-container">
+                <ul class="guides-list">
+                    ${guides}
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section for chatting with other users -->
+        <section id="users-section">
+            <h2>Friends</h2>
+            <form class="input-form" action="/chat" method="post">
+                <input type="hidden" name="sender" value=${sender}> 
+                <input type="hidden" name="receiver" id="receiver">
+                <div class="friend-list-container">
+                    <ul class="friend-list">
+                        ${friends}
+                    </ul>
+                </div>
+            </form>
+        </section>
+
+        <!-- Section for a todo list-->
+        <section id="todo-section">
+            <h2>Todo List</h2>
+            <div id="todo-container">
+                <form class="todo-form" action="/todo" method="post">
+                    <input type="hidden" name="sender" value=${sender}>
+                    <input type="text" name="todo" id="todo">
+                    <input type="submit" value="Add Todo">
+                </form>
+
+                <ul class="todo-list">
+                    ${todos}
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section for adding/removing friends -->
+        <form class="form-add-friend" action="/add_friends" method="post">
+            <input type="hidden" name="sender" value=${sender}>
+            <label for="friend">Add Friend:</label>
+            <input type="text" name="friend" id="friend">
+            <input type="submit" value="Add Friend">
+        </form>
+
+        <form class="form-remove-friend" action="/remove_friends" method="post">
+            <input type="hidden" name="sender" value=${sender}>
+            <label for="friend">Remove Friend:</label>
+            <input type="text" name="friend" id="friend">
+            <input type="submit" value="Remove Friend">
+        </form>
+    </main>
+</body>

@@ -1,0 +1,371 @@
+:root {
+  /* Light theme */
+  --background-color: white;
+  --text-color: #317233e8;
+  --button-color: #1d4b22e8;
+  --button-text-color: white;
+  --background-color2: rgba(207, 202, 202, 0.647);
+  --hover-color: #37ac87;
+}
+
+body.dark {
+  /* Dark theme */
+  --background-color: #274628e8;
+  --text-color: white;
+  --button-color: #1e311fe8;
+  --button-text-color: white;
+  --background-color2: #4e5e4fdc;
+  --hover-color: #37ac87;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+button {
+  background-color: var(--button-color);
+  color: var(--button-text-color);
+}
+
+header {
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  text-align: center;
+}
+
+h1,
+h2 {
+  margin:0px;
+  padding: 20px;
+}
+
+main {
+  margin: 20px;
+}
+
+section {
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: var(--background-color2);
+}
+
+/* #course-guides {
+    /* Specific styles for course guides section 
+}
+
+#users-section {
+    /* Specific styles for users section 
+} */
+
+/* #users-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+} */
+
+.friend-list {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.friend-list li {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin: 10px;
+  background-color: var(--button-color);
+  color: var(--button-text-color);
+  border-radius: 5px;
+  width: auto;
+  height: auto;
+}
+
+.chat-button {
+  display: block;
+  padding: 10px;
+  /* center text vetically*/
+  margin-bottom: 10px;
+  text-align: center;
+  color: var(--text-color);
+  background-color: var(--background-color2);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.chat-button:hover {
+  background-color: var(--hover-color);
+}
+
+.add-friend-button {
+  display: block;
+  background-color: var(--button-color);
+  color: var(--button-text-color);
+  text-align: center;
+  padding: 1rem;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 1rem;
+  width: 25%;
+  height: 10%;
+}
+
+.medium-button {
+  display: inline-block;
+  background-color: var(--button-color);
+  color: var(--button-text-color);
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.medium-button:hover {
+  background-color: var(--hover-color);
+}
+
+.container {
+  background-color: var(--background-color);
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.welcome-title {
+  color: var(--text-color);
+  font-size: 36px;
+  margin-top: 0;
+}
+
+.welcome-p {
+  color: var(--text-color);
+  font-size: 18px;
+}
+
+.navbar {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--button-color);
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
+}
+
+.navbar a {
+  text-decoration: none;
+  color: var(--button-text-color);
+  margin: 0 15px;
+}
+
+.navbar a:hover {
+  color: var(--hover-color);
+}
+
+.active {
+  font-weight: bolder;
+}
+
+.button-link {
+  background: none !important;
+  border: none;
+  padding: 0 !important;
+  /*optional*/
+  /*input has OS specific font-family*/
+  color: var(--button-text-color);
+  text-decoration: none;
+  cursor: pointer;
+  margin: 0 5px;
+  font-size: medium;
+}
+
+form {
+  margin-top: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  color: var(--text-color);
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.login-form {
+  padding: 20px;
+  background-color: var(--button-color);
+  color: var(--button-text-color);
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.login-form input {
+  width: calc(100% - 20px); /* Adjusts width to account for padding */
+  margin-bottom: 10px;
+  padding: 10px;
+  box-sizing: border-box; /* Ensures padding doesn't increase width */
+}
+
+.login-form button {
+  width: calc(100% - 20px); /* Adjusts width to account for padding */
+  padding: 10px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 5px; /* Adds rounded corners to button */
+  box-sizing: border-box; /* Ensures padding doesn't increase width */
+}
+
+.login-form button:hover {
+  background-color: var(--hover-color);
+}
+
+.register-link {
+  display: block;
+  margin-top: 10px;
+  color: var(--text-color);
+}
+
+.receiver-name {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
+.chat-container {
+  padding: 1rem;
+  height: calc(100vh - 150px);
+  overflow-y: auto;
+}
+
+.message {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: var(--background-color2);
+  border-radius: 5px;
+}
+
+.input-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--background-color);
+  padding: 1rem;
+}
+
+.input-form {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.input-form input {
+  flex: 1;
+  padding: 10px;
+  margin-right: 1rem;
+  border: 1px solid var(--text-color);
+  border-radius: 5px;
+}
+
+.input-form button {
+  flex-shrink: 0;
+  padding: 10px 15px;
+}
+
+.darkmode-button {
+  display: flex;
+  justify-content: center;
+  background-color: var(--button-color);
+  color: var(--button-text-color);
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+  min-width: 15%;
+  max-width: 20%;
+}
+
+.todo-list {
+  list-style-type: none;
+}
+
+.todo-task {
+  border: var(--button-color);
+  border-radius: 5px;
+}
+
+.delete-todo-button {
+  min-width: 15%;
+  max-width: 20%;
+  background-color: var(--button-color);
+  color: var(--button-text-color);
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+}
+
+#toggleButonn {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border-radius: 5px;
+  border: none;
+  background-color: var(--button-color);
+  color: var(--button-text-color);
+  font-size: 18px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: var(--background-color);
+}
+footer {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+}
